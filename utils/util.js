@@ -15,5 +15,6 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  key: '48365b8de9d34fe2b6313e9c811539bb'
 }
