@@ -1,0 +1,27 @@
+<swiper
+  indicator-dots='{{indicatorDots}}'
+  autoplay='{{autoplay}}'
+  interval='{{interval}}'
+  duration='{{duration}}'>
+  <block wx:for='{{goods.imgUrls}}' wx:key='index'>
+    <swiper-item>
+      <image src='{{item}}' data-item='{{item}}' bindtap='previewImage' mode='widthFix' />
+    </swiper-item>
+  </block>
+</swiper>
+<view>
+  <view class="product-name-wrap">{{goods.title}}</view>
+  <view class="product-price-wrap">
+    <p class="product-price-new">￥{{goods.price}}</p>
+    <p class="product-price-old">原价 ￥{{goods.privilegePrice}}</p>
+  </view>
+</view>
+<view class="details">
+  <scroll-view scroll-y='true'>
+    <text>商品详情</text>
+    <block wx:for='{{goods.detailImg}}' wx:key='name'>
+      <image class="image_detail" src='{{item}}' mode='widthFix' />
+    </block>
+    <view class="temp"></view>
+  </scroll-view>
+</view>

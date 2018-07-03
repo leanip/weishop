@@ -1,0 +1,84 @@
+<!-- 导航条 -->
+<view class="navbar">
+  <text wx:for='{{navbars}}'
+        class="item {{currentTab == index ? 'active' : ''}}"
+        data-idx='{{index}}'
+        wx:key='unique'
+        bindtap='navbarTap'>{{item.navbarName}}</text>
+</view>
+<!-- 首页轮播 banner -->
+<swiper 
+  indicator-dots='{{indicatorDots}}'
+  autoplay='{{autoplay}}'
+  interval='{{interval}}'
+  duration='{{duration}}'
+>
+  <block wx:for='{{banners}}' wx:key='unique'>
+    <swiper-item>
+      <image src='{{item.imgUrl}}' mode='widthFix' />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 分类导航 -->
+<view>
+  <view class="navs">
+    <block wx:for='{{menus}}' wx:key='index' >
+      <view class="nav-item">
+        <image src='{{item.imgUrl}}' class="nav-image" />
+        <text>{{item.menuName}}</text>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 新品特卖 -->
+<view class="separate"></view>
+<view class="cate-container">
+  <view class='category-title'>
+    <text class="name">新品特卖</text>
+    <view class="line_flag"></view>
+  </view>
+  <block wx:for='{{brands}}' wx:key='id'>
+    <navigator url='/pages/detail/detail'>
+      <image class="head-img" src='{{item.imgUrl}}' mode='widthFix' />
+    </navigator>
+    <text class='brand-name'>{{item.name}}</text>
+    <view class="pms">
+      <image class="activity-logo" src='../../images/activity_logo.png' mode='widthFix' />
+      {{item.remark}}
+    </view>
+  </block>
+</view>
+<!-- 福利专场 -->
+<view class="welfare-container">
+  <view class="category-title">
+    <text class="title">福利专场</text>
+    <view class="line-name">
+      <text>每天早10晚8准时上新</text>
+    </view>
+  </view>
+  <scroll-view scroll-y='true'>
+    <view class="welfares">
+    <block wx:for='{{newGoods}}' wx:key='id'>
+      <view class="welfares-good"
+            catchtap='catchTapCategory'
+            data-name='{{item.name}}'
+            data-goodsid='{{item.id}}'>
+        <view>
+          <image class="welfares-image" src='{{item.imgUrl}}' mode='widthFix' />
+        </view>
+        <view class="product-name">{{item.name}}</view>
+        <view class="product-price-wrap">
+          <p class="product-price-new">￥{{item.price}}</p>
+          <p class="product-price-olk">￥{{item.privilegePrice}}</p>
+          <p class="discount">{{item.discount}}折扣</p>
+        </view>
+      </view>
+    </block>
+    </view>
+  </scroll-view>
+</view>
+<!-- 下拉加载更多 -->
+<view class="weui-loadmore" hidden='{{hidden}}'>
+  <view class="weui-loading"></view>
+  <view class="weui-loadmore_tips">努力加载中</view>
+</view>
