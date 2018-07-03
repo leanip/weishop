@@ -25,3 +25,40 @@
     <view class="temp"></view>
   </scroll-view>
 </view>
+
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <image class="toCar" src='../../images/cart1.png' />
+  <view class="line_nav"></view>
+  <image bindtap="addLike" src='{{isLike?"../../images/enshrine_select.png":"../../images/enshrine.png"}}' />
+  <button class="button-green" data-goodid='1' bindtap='toggleDialog'>加入购物车</button>
+  <button class="button-red" bindtap='immeBuy' formType='submit'>立即购买</button>
+</view>
+
+<!-- 弹出框加入购物车 -->
+<import src='../template/template.wxml' />
+
+<view class="dialog {{showDialog ? 'dialog--show': ''}}">
+  <view class="dialog__mask" bindtap='toggleDialog' />
+  <view class="dialog__container">
+    <view class="row">
+      <icon class="image-close" bindtap='closeDialog' type='cancel' size='25' />
+      <image class='image-sku' src='{{goods.imgUrl}}' />
+      <view class="column">
+        <text class="sku-price">￥{{goods.totalMoney}}</text>
+        <text class="sku-title">销量 {{goods.buyRage}}</text>
+        <text class="sku-title">商品编码：{{goods.goodsId}}</text>
+      </view>
+    </view>
+    <text class="border-line"></text>
+    <view class="row">
+      <text>购买数量</text>
+      <view class="quantity-position">
+        <template is='quantity' data='{{...goods, index:1}}'/>
+      </view>
+    </view>
+    <text class="border-line"></text>
+
+    <button data-goodid='{{goods.goodsId}}' class="button-addCar" bindtap='addCar' formType='submit' >确定</button>
+  </view>
+</view>
