@@ -5,6 +5,7 @@
     "pages/detail/detail",
     "pages/classify/classify",
     "pages/mine/mine",
+    "pages/brand/brand",
     "pages/index/index",
     "pages/logs/logs"
   ],

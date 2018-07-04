@@ -16,6 +16,12 @@ swiper-item image {
   height: 100%;
 }
 
+.product-name-wrap {
+  margin: 0px 10px;
+  font-size: 14px;
+  color: #404040;
+}
+
 /**商品价格**/
 
 .product-price-wrap {
@@ -43,14 +49,8 @@ swiper-item image {
   font-weight: 300;
 }
 
-.product-name-wrap {
-  margin: 0px 10px;
-  font-size: 14px;
-  color: #404040;
-}
-
 .details {
-  padding: 0 5px 0 5px;
+  padding: 0 5px;
 }
 
 .detail {
@@ -128,8 +128,8 @@ swiper-item image {
 }
 
 .detail-nav image {
-  width: 70rpx;
-  height: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
   margin: 20rpx 40rpx;
 }
 
@@ -146,80 +146,94 @@ swiper-item image {
 }
 
 /* #template 模板引用 */
-@import "../template/template.wxss"; 
+
+@import "../template/template.wxss";
 /* sku选择 */
-.dialog__mask {  
-    position: fixed;  
-    top: 0;  
-    left: 0;  
-    right: 0;  
-    bottom: 0;  
-    z-index: 10;  
-    background: rgba(0, 0, 0, 0.7);  
-    display: none;
+
+.dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
 }
-.dialog__container {  
-    position: fixed;  
-    bottom: 0;  
-    width: 100%;  
-    background: white;  transform: translateY(150%);  
-    transition: all 0.4s ease;  
-    z-index: 11;
+
+.dialog__container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 11;
 }
-.dialog--show .dialog__container {  
-    transform: translateY(0);
+
+.dialog--show .dialog__container {
+  transform: translateY(0);
 }
-.dialog--show .dialog__mask {  
-    display: block;
+
+.dialog--show .dialog__mask {
+  display: block;
 }
-.image-sku {  
-    width: 200rpx;  
-    height: 200rpx;  
-    z-index: 12;  
-    position: absolute;  
-    left: 20px;  
-    top: -30px;  
-    border-radius: 20rpx;
+
+.image-sku {
+  width: 200rpx;
+  height: 200rpx;
+  z-index: 12;
+  position: absolute;
+  left: 20px;
+  top: -30px;
+  border-radius: 20rpx;
 }
-.image-close {  
-    width: 40rpx;  
-    height: 40rpx;  
-    position: fixed;  
-    right: 20rpx;  
-    top: 10rpx;
+
+.image-close {
+  width: 40rpx;
+  height: 40rpx;
+  position: fixed;
+  right: 20rpx;
+  top: 10rpx;
 }
-.column {  
-    display: flex;  
-    flex-direction: column;
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
-.row {  
-    display: flex;  
-    flex-direction: row;  
-    align-items: center;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.border-line {  
-    width: 100%;  
-    height: 2rpx;  
-    display: inline-block;  
-    margin: 30rpx 0rpx;  
-    background-color: gainsboro;  
-    text-align: center;
+
+.border-line {
+  width: 100%;
+  height: 2rpx;
+  display: inline-block;
+  margin: 30rpx 0rpx;
+  background-color: gainsboro;
+  text-align: center;
 }
-.sku-title {  
-    position: relative;  
-    left: 300rpx;  
-    margin: 1rpx;
+
+.sku-title {
+  position: relative;
+  left: 300rpx;
+  margin: 1rpx;
 }
-.sku-price {  
-    color: red;  
-    position: relative;  
-    left: 300rpx;  
-    margin: 1rpx;
+
+.sku-price {
+  color: red;
+  position: relative;
+  left: 300rpx;
+  margin: 1rpx;
 }
-.row .quantity-position {  
-    position: absolute;  
-    right: 30rpx;  
-    display: flex;  
-    justify-content: center;  
-    flex-direction: column;  
+
+.row .quantity-position {
+  position: absolute;
+  right: 30rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
